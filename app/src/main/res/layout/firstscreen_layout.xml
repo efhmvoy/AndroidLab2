@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/grey"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ExtraText">
+
+
+    <TextView
+        android:layout_width="200dp"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_your_profit"
+
+        android:textColor="@color/white"
+
+        />
+
+
+    <EditText
+        android:id="@+id/profitPerMonth"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+
+        android:inputType="number"
+        android:maxLength="10"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="200dp"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:text="@string/percentage_of_profit"
+
+        android:textColor="@color/white"
+
+        />
+
+
+    <EditText
+        android:id="@+id/monthPercentage"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="0"
+
+        android:inputType="numberDecimal"
+        tools:ignore="LabelFor" />
+
+    <Button
+        android:id="@+id/secondScreenButton"
+        android:layout_marginTop="50dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+
+        />
+
+
+</LinearLayout>

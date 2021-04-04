@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Savings Calculator</string>
+    <string name="start_calculations">Почати розрахунок</string>
+    <string name="exit">Вийти</string>
+    <string name="android_application_for_calculating_savings_in_foreign_currency">Android-додаток для розрахунку заощаджень в іноземній валюті</string>
+    <string name="enter_your_profit">Дохід за місяць</string>
+    <string name="profitPerMonth">%1$d zxc</string>
+    <string name="monthPercentage">%1$d zxc</string>
+    <string name="next">Далі</string>
+    <string name="percentage_of_profit">Відсоток доходу (0&lt;p&lt;1)</string>
+    <string name="calculate">Розрахувати</string>
+    <string name="SyString">1) Гіпотетичний повний річний дохід у гривні без обміну валюти:</string>
+    <string name="_100">100</string>
+    <string name="Sy">%1$s</string>
+    <string name="ok">OK</string>
+    <string name="ScString">2) Кількість гривень, витрачених на обмін валюти:</string>
+    <string name="Sc">%1$s</string>
+    <string name="WString">3) Кількість валюти, придбаної за рік:</string>
+    <string name="W">%1$s</string>
+    <string name="ShString">4) Гривнева вартість придбаної валюти на кінець року:</string>
+
+    <string name="Sh">%1$s</string>
+    <string name="SlString">5) Гривневий залишок:</string>
+    <string name="Sl">%1$s</string>
+    <string name="HString">6) Сума гривневого залишку та гривневої вартості валюти на кінець року:</string>
+    <string name="H">%1$s</string>
+    <string name="RString">7) Сума заощадження: різниця між сумою та гіпотетичним річним доходом:</string>
+    <string name="R">%1$s</string>
+    <string name="zxc">Your Text Here!</string>
+
+
+</resources>

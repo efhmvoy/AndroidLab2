@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+   <TableRow
+
+       tools:ignore="ExtraText">
+
+
+       <TextView
+
+           android:layout_weight="0.7"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/SyString" />
+
+            <TextView
+                android:id="@+id/Sy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20dp" >
+
+
+        <TextView
+
+            android:layout_weight="0.7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ScString" />
+
+        <TextView
+            android:id="@+id/Sc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+        />
+    </TableRow>
+    <TableRow android:layout_marginTop="20dp" >
+
+
+        <TextView
+            android:layout_weight="0.7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/WString" />
+
+        <TextView
+            android:id="@+id/W"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+        />
+    </TableRow>
+    <TableRow android:layout_marginTop="20dp">
+
+
+        <TextView
+            android:layout_weight="0.7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ShString" />
+
+        <TextView
+            android:id="@+id/Sh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+        />
+    </TableRow>
+    <TableRow android:layout_marginTop="20dp">
+
+
+        <TextView
+            android:layout_weight="0.7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/SlString" />
+
+        <TextView
+            android:id="@+id/Sl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+        />
+    </TableRow>
+    <TableRow android:layout_marginTop="20dp">
+
+
+        <TextView
+            android:layout_weight="0.7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/HString" />
+
+        <TextView
+            android:id="@+id/H"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+        />
+    </TableRow>
+    <TableRow android:layout_marginTop="20dp">
+
+
+        <TextView
+            android:layout_weight="0.7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/RString" />
+
+        <TextView
+            android:id="@+id/R"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+        />
+    </TableRow >
+    <TableRow android:layout_marginTop="20dp" android:gravity="center">
+
+        <Button
+            android:id="@+id/OKButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ok"
+            />
+    </TableRow>
+
+</TableLayout>
