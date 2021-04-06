@@ -8,14 +8,17 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public  class CalculationsService  extends IntentService {
 
-
+        public final String DOWNLOAD = "download";
     private  static List<Currency> currencyList = new ArrayList<>();
 
     /**
@@ -27,6 +30,10 @@ public  class CalculationsService  extends IntentService {
         super(name);
     }
 
+    public  CalculationsService()
+    {
+        super(CalculationsService.class.getSimpleName());
+    }
 
 
     public static  List<Currency> getCurrencylist()
@@ -80,10 +87,38 @@ public  class CalculationsService  extends IntentService {
     }
 
 
+    public void readFile()
+    {
+        App app = (App) getApplication();
+        String mLine = "";
+        Scanner reader = null;
+        String currencyName="zxc" ;
+        String cStart;
+        String cEnd;
+        try {
+            reader = new Scanner(
+                    new InputStreamReader(getAssets().open("zxc.txt")));
+            reader.useDelimiter(",");
 
+            while (reader.hasNext()) {
+                currencyName=reader.next();
+                cStart=reader.next();
+                cEnd=reader.next();
+                CalculationsService.getCurrencylist().add(new Currency(currencyName,Double.parseDouble(cStart),Double.parseDouble(cEnd)));
+                Log.d("zxc",currencyName);
+                app.publishProgress(100);
+                app.publishCompleted();
+            }
+        } catch (IOException e) {
+            //log the exception
+        }
+
+    }
     @Override
     public void onCreate() {
+
         super.onCreate();
+        App app= (App)getApplication();
     }
 
     @Override
@@ -98,8 +133,12 @@ public  class CalculationsService  extends IntentService {
 
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
+        String action = intent.getAction();
+        if(action.equals(DOWNLOAD))
+        {
+            readFile();
+        }
 
-        Log.d("zxc","zxc");
     }
 }
 

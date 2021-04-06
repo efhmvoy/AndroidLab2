@@ -14,7 +14,19 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements TaskListener{
+    App app;
+    @Override
+    protected void onStop() {
+        super.onStop();
+        app.removeListener(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        app.addListener(this);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -23,26 +35,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.menu_layout);
         Button firstScreenButton = this.findViewById(R.id.firstScreenButton);
         Button exitButton = this.findViewById(R.id.exitButton);
-        String mLine = "";
-        Scanner reader = null;
-        String currencyName="zxc" ;
-        String cStart;
-        String cEnd;
-        try {
-            reader = new Scanner(
-                    new InputStreamReader(getAssets().open("zxc.txt")));
-            reader.useDelimiter(",");
+            app = (App)getApplicationContext();
+            Intent intent = new Intent(this, CalculationsService.class);
+            intent.setAction(CalculationsService.DOWNLOAD_SERVICE);
+            startService(intent);
 
-            while (reader.hasNext()) {
-                currencyName=reader.next();
-                cStart=reader.next();
-                cEnd=reader.next();
-                CalculationsService.getCurrencylist().add(new Currency(currencyName,Double.parseDouble(cStart),Double.parseDouble(cEnd)));
-                Log.d("zxc",currencyName);
-            }
-        } catch (IOException e) {
-            //log the exception
-        }
+
 
 
         exitButton.setOnClickListener(v->
@@ -55,10 +53,20 @@ public class MainActivity extends AppCompatActivity {
         firstScreenButton.setOnClickListener(v->
                 {
 
-                    Intent intent = new Intent(this, FirstScreenActivity.class);
-                    startActivity(intent);
+                    Intent intent1 = new Intent(this, FirstScreenActivity.class);
+                    startActivity(intent1);
 
                 }
         );
     }
+
+    @Override
+    public void onCompleted() {
+
     }
+
+    @Override
+    public void onProgressChanged(int percents) {
+
+    }
+}
